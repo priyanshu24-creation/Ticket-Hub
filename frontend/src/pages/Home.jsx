@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, ChevronDown, MapPin, Star } from 'lucide-react';
-import { mockMovies, genres, languages } from '../mock/mockData';
+import { mockMovies, mockEvents, mockSports, mockLiveShows, genres, languages, cities } from '../mock/mockData';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import {
@@ -11,10 +11,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../components/ui/select';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '../components/ui/dropdown-menu';
 
 const Home = () => {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('movies');
   const [movies, setMovies] = useState(mockMovies);
+  const [events, setEvents] = useState(mockEvents);
+  const [sports, setSports] = useState(mockSports);
+  const [liveShows, setLiveShows] = useState(mockLiveShows);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('all');
   const [selectedLanguage, setSelectedLanguage] = useState('all');
