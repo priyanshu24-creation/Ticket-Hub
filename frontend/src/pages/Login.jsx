@@ -81,26 +81,26 @@ const Login = () => {
             <TabsContent value="login">
               <form onSubmit={handleLogin} className="space-y-4">
                 <div>
-                  <Label htmlFor="login-email">Email</Label>
+                  <Label htmlFor="login-email" className="text-gray-300">Email</Label>
                   <Input
                     id="login-email"
                     type="email"
                     placeholder="your.email@example.com"
                     value={loginData.email}
                     onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 bg-gray-800 border-gray-700 text-white"
                     required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="login-password">Password</Label>
+                  <Label htmlFor="login-password" className="text-gray-300">Password</Label>
                   <Input
                     id="login-password"
                     type="password"
                     placeholder="••••••••"
                     value={loginData.password}
                     onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 bg-gray-800 border-gray-700 text-white"
                     required
                   />
                 </div>
@@ -113,62 +113,62 @@ const Login = () => {
             <TabsContent value="register">
               <form onSubmit={handleRegister} className="space-y-4">
                 <div>
-                  <Label htmlFor="register-name">Full Name</Label>
+                  <Label htmlFor="register-name" className="text-gray-300">Full Name</Label>
                   <Input
                     id="register-name"
                     type="text"
                     placeholder="John Doe"
                     value={registerData.name}
                     onChange={(e) => setRegisterData({ ...registerData, name: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 bg-gray-800 border-gray-700 text-white"
                     required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="register-email">Email</Label>
+                  <Label htmlFor="register-email" className="text-gray-300">Email</Label>
                   <Input
                     id="register-email"
                     type="email"
                     placeholder="your.email@example.com"
                     value={registerData.email}
                     onChange={(e) => setRegisterData({ ...registerData, email: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 bg-gray-800 border-gray-700 text-white"
                     required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="register-phone">Phone Number</Label>
+                  <Label htmlFor="register-phone" className="text-gray-300">Phone Number</Label>
                   <Input
                     id="register-phone"
                     type="tel"
                     placeholder="+91 XXXXX XXXXX"
                     value={registerData.phone}
                     onChange={(e) => setRegisterData({ ...registerData, phone: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 bg-gray-800 border-gray-700 text-white"
                     required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="register-password">Password</Label>
+                  <Label htmlFor="register-password" className="text-gray-300">Password</Label>
                   <Input
                     id="register-password"
                     type="password"
                     placeholder="••••••••"
                     value={registerData.password}
                     onChange={(e) => setRegisterData({ ...registerData, password: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 bg-gray-800 border-gray-700 text-white"
                     required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="register-confirm-password">Confirm Password</Label>
+                  <Label htmlFor="register-confirm-password" className="text-gray-300">Confirm Password</Label>
                   <Input
                     id="register-confirm-password"
                     type="password"
                     placeholder="••••••••"
                     value={registerData.confirmPassword}
                     onChange={(e) => setRegisterData({ ...registerData, confirmPassword: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 bg-gray-800 border-gray-700 text-white"
                     required
                   />
                 </div>
@@ -182,7 +182,7 @@ const Login = () => {
           <div className="mt-6 text-center">
             <button
               onClick={() => navigate('/')}
-              className="text-sm text-gray-600 hover:text-gray-900"
+              className="text-sm text-gray-400 hover:text-red-500 transition-colors"
             >
               Continue as Guest
             </button>
