@@ -38,8 +38,12 @@ const Payment = () => {
       return;
     }
 
-    setProcessing(true);
+    // Show QR code for payment
+    setShowPaymentQR(true);
+  };
 
+  const handlePaymentComplete = () => {
+    setProcessing(true);
     // Mock payment processing
     setTimeout(() => {
       setProcessing(false);
@@ -60,6 +64,13 @@ const Payment = () => {
       });
     }, 2000);
   };
+
+  const paymentQRData = JSON.stringify({
+    amount: grandTotal,
+    upiId: 'tickethub@paytm',
+    name: 'TicketHub',
+    transactionNote: `Booking for ${movie?.title}`
+  });
 
   return (
     <div className="min-h-screen bg-gray-950">
