@@ -84,19 +84,57 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent cursor-pointer" onClick={() => setActiveTab('movies')}>
                 TicketHub
               </h1>
               <div className="hidden md:flex items-center space-x-6">
-                <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">Movies</a>
+                <button 
+                  onClick={() => setActiveTab('movies')}
+                  className={`transition-colors ${activeTab === 'movies' ? 'text-red-500' : 'text-gray-300 hover:text-red-500'}`}
+                >
+                  Movies
+                </button>
+                <button 
+                  onClick={() => setActiveTab('events')}
+                  className={`transition-colors ${activeTab === 'events' ? 'text-red-500' : 'text-gray-300 hover:text-red-500'}`}
+                >
+                  Events
+                </button>
+                <button 
+                  onClick={() => setActiveTab('sports')}
+                  className={`transition-colors ${activeTab === 'sports' ? 'text-red-500' : 'text-gray-300 hover:text-red-500'}`}
+                >
+                  Sports
+                </button>
+                <button 
+                  onClick={() => setActiveTab('live-shows')}
+                  className={`transition-colors ${activeTab === 'live-shows' ? 'text-red-500' : 'text-gray-300 hover:text-red-500'}`}
+                >
+                  Live Shows
+                </button>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="flex items-center space-x-1 text-sm text-gray-300 hover:text-red-500 transition-colors">
-                <MapPin className="h-4 w-4" />
-                <span>{city}</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="flex items-center space-x-1 text-sm text-gray-300 hover:text-red-500 transition-colors">
+                    <MapPin className="h-4 w-4" />
+                    <span>{city}</span>
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-gray-900 border-gray-800">
+                  {cities.map(c => (
+                    <DropdownMenuItem 
+                      key={c} 
+                      onClick={() => setCity(c)}
+                      className="text-white hover:bg-gray-800 cursor-pointer"
+                    >
+                      {c}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button onClick={() => navigate('/login')} variant="outline" size="sm" className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white">
                 Sign In
               </Button>
