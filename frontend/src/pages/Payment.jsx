@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, Check } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Input } from '../components/ui/input';
@@ -16,6 +17,7 @@ const Payment = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [processing, setProcessing] = useState(false);
+  const [showPaymentQR, setShowPaymentQR] = useState(false);
 
   if (!selectedSeats || !movie || !showtime) {
     navigate('/');
