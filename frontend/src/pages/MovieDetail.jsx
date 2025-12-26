@@ -32,15 +32,17 @@ const MovieDetail = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-950">
       {/* Header */}
-      <header className="bg-white shadow-sm">
+      <header className="bg-gray-900 border-b border-gray-800 backdrop-blur-lg bg-opacity-90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
-              <h1 className="text-2xl font-bold text-red-600">BookMyShow</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+                TicketHub
+              </h1>
             </div>
-            <Button onClick={() => navigate('/login')} variant="outline" size="sm">
+            <Button onClick={() => navigate('/login')} variant="outline" size="sm" className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white">
               Sign In
             </Button>
           </div>
@@ -49,13 +51,13 @@ const MovieDetail = () => {
 
       {/* Hero Section */}
       <div className="relative bg-gray-900 text-white">
-        <div className="absolute inset-0 opacity-20">
-          <img src={movie.poster} alt="" className="w-full h-full object-cover blur-2xl" />
+        <div className="absolute inset-0 opacity-10">
+          <img src={movie.poster} alt="" className="w-full h-full object-cover blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <button
             onClick={() => navigate('/')}
-            className="flex items-center space-x-2 text-white hover:text-gray-300 mb-6"
+            className="flex items-center space-x-2 text-gray-300 hover:text-red-500 mb-6 transition-colors"
           >
             <ArrowLeft className="h-5 w-5" />
             <span>Back</span>
