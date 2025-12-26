@@ -49,27 +49,26 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-950">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+      <header className="bg-gray-900 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-lg bg-opacity-90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
-              <h1 className="text-2xl font-bold text-red-600">BookMyShow</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+                TicketHub
+              </h1>
               <div className="hidden md:flex items-center space-x-6">
-                <a href="#" className="text-gray-700 hover:text-gray-900">Movies</a>
-                <a href="#" className="text-gray-700 hover:text-gray-900">Events</a>
-                <a href="#" className="text-gray-700 hover:text-gray-900">Plays</a>
-                <a href="#" className="text-gray-700 hover:text-gray-900">Sports</a>
+                <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">Movies</a>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="flex items-center space-x-1 text-sm text-gray-700 hover:text-gray-900">
+              <button className="flex items-center space-x-1 text-sm text-gray-300 hover:text-red-500 transition-colors">
                 <MapPin className="h-4 w-4" />
                 <span>{city}</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <Button onClick={() => navigate('/login')} variant="outline" size="sm">
+              <Button onClick={() => navigate('/login')} variant="outline" size="sm" className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white">
                 Sign In
               </Button>
             </div>
@@ -78,24 +77,24 @@ const Home = () => {
       </header>
 
       {/* Search and Filters */}
-      <div className="bg-white border-b">
+      <div className="bg-gray-900 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500" />
               <Input
                 type="text"
-                placeholder="Search for Movies, Events, Plays, Sports and Activities"
-                className="pl-10 w-full"
+                placeholder="Search for Movies"
+                className="pl-10 w-full bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
             <Select value={selectedGenre} onValueChange={setSelectedGenre}>
-              <SelectTrigger className="w-full md:w-[180px]">
+              <SelectTrigger className="w-full md:w-[180px] bg-gray-800 border-gray-700 text-white">
                 <SelectValue placeholder="Genre" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-gray-800 border-gray-700">
                 <SelectItem value="all">All Genres</SelectItem>
                 {genres.map(genre => (
                   <SelectItem key={genre} value={genre}>{genre}</SelectItem>
@@ -103,10 +102,10 @@ const Home = () => {
               </SelectContent>
             </Select>
             <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
-              <SelectTrigger className="w-full md:w-[180px]">
+              <SelectTrigger className="w-full md:w-[180px] bg-gray-800 border-gray-700 text-white">
                 <SelectValue placeholder="Language" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-gray-800 border-gray-700">
                 <SelectItem value="all">All Languages</SelectItem>
                 {languages.map(lang => (
                   <SelectItem key={lang} value={lang}>{lang}</SelectItem>
@@ -119,7 +118,7 @@ const Home = () => {
 
       {/* Movies Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Recommended Movies</h2>
+        <h2 className="text-2xl font-bold text-white mb-6">Recommended Movies</h2>
         
         {movies.length === 0 ? (
           <div className="text-center py-12">
