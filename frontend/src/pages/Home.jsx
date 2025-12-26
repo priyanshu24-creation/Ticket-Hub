@@ -58,6 +58,25 @@ const Home = () => {
     setMovies(filtered);
   };
 
+  const getCurrentItems = () => {
+    switch (activeTab) {
+      case 'events':
+        return events;
+      case 'sports':
+        return sports;
+      case 'live-shows':
+        return liveShows;
+      default:
+        return movies;
+    }
+  };
+
+  const handleItemClick = (id) => {
+    if (activeTab === 'movies') {
+      navigate(`/movie/${id}`);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-950">
       {/* Header */}
