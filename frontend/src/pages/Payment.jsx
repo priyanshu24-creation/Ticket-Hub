@@ -217,11 +217,11 @@ const Payment = () => {
 
               <Button
                 onClick={handlePayment}
-                disabled={processing}
+                disabled={processing || showPaymentQR}
                 className="w-full mt-4 bg-red-600 hover:bg-red-700"
                 size="lg"
               >
-                {processing ? 'Processing...' : `Pay ₹${grandTotal}`}
+                {showPaymentQR ? 'Scan QR to Pay' : `Pay ₹${grandTotal}`}
               </Button>
 
               <p className="text-xs text-gray-500 text-center mt-3">
