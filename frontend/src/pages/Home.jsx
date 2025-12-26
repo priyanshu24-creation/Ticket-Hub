@@ -122,7 +122,7 @@ const Home = () => {
         
         {movies.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No movies found matching your filters</p>
+            <p className="text-gray-400 text-lg">No movies found matching your filters</p>
           </div>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
@@ -132,13 +132,14 @@ const Home = () => {
                 className="group cursor-pointer"
                 onClick={() => navigate(`/movie/${movie.id}`)}
               >
-                <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+                <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-300">
                   <img
                     src={movie.poster}
                     alt={movie.title}
-                    className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-[320px] object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-2 right-2 bg-black bg-opacity-75 text-white px-2 py-1 rounded text-sm flex items-center space-x-1">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-sm text-white px-2 py-1 rounded text-sm flex items-center space-x-1">
                     <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
                     <span>{movie.rating}/10</span>
                   </div>
@@ -147,10 +148,10 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="mt-3">
-                  <h3 className="font-semibold text-gray-900 group-hover:text-red-600 transition-colors">
+                  <h3 className="font-semibold text-white group-hover:text-red-500 transition-colors">
                     {movie.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mt-1">{movie.genres.join(', ')}</p>
+                  <p className="text-sm text-gray-400 mt-1">{movie.genres.join(', ')}</p>
                 </div>
               </div>
             ))}
