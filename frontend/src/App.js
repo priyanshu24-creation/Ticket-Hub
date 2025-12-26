@@ -6,6 +6,7 @@ import SeatSelection from "./pages/SeatSelection";
 import Payment from "./pages/Payment";
 import BookingConfirmation from "./pages/BookingConfirmation";
 import Login from "./pages/Login";
+import AdminDashboard from "./pages/AdminDashboard";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
           <Route path="/seat-selection/:movieId/:showtimeId" element={<SeatSelection />} />
           <Route path="/payment/:movieId/:showtimeId" element={<Payment />} />
