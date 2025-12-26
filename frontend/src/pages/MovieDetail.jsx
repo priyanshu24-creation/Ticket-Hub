@@ -108,11 +108,11 @@ const MovieDetail = () => {
                 <Button size="lg" className="bg-red-600 hover:bg-red-700">
                   Book Tickets
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
+                <Button size="lg" variant="outline" className="border-gray-700 text-white hover:bg-gray-800">
                   <Share2 className="h-5 w-5 mr-2" />
                   Share
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
+                <Button size="lg" variant="outline" className="border-gray-700 text-white hover:bg-gray-800">
                   <Heart className="h-5 w-5" />
                 </Button>
               </div>
@@ -124,9 +124,9 @@ const MovieDetail = () => {
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Tabs defaultValue="showtimes" className="w-full">
-          <TabsList className="mb-6">
-            <TabsTrigger value="showtimes">Book Tickets</TabsTrigger>
-            <TabsTrigger value="trailer">Trailer</TabsTrigger>
+          <TabsList className="mb-6 bg-gray-900 border border-gray-800">
+            <TabsTrigger value="showtimes" className="data-[state=active]:bg-red-600">Book Tickets</TabsTrigger>
+            <TabsTrigger value="trailer" className="data-[state=active]:bg-red-600">Trailer</TabsTrigger>
           </TabsList>
           
           <TabsContent value="showtimes">
