@@ -138,8 +138,8 @@ const MovieDetail = () => {
                   onClick={() => setSelectedDate(index)}
                   className={`flex-shrink-0 px-6 py-3 rounded-lg border-2 transition-all ${
                     selectedDate === index
-                      ? 'border-red-600 bg-red-50 text-red-600'
-                      : 'border-gray-300 hover:border-gray-400'
+                      ? 'border-red-600 bg-red-600/20 text-red-500'
+                      : 'border-gray-800 bg-gray-900 text-gray-400 hover:border-gray-700'
                   }`}
                 >
                   <div className="text-sm font-medium">{date.day}</div>
@@ -152,11 +152,11 @@ const MovieDetail = () => {
             {/* Theaters */}
             <div className="space-y-4">
               {mockTheaters.map(theater => (
-                <Card key={theater.id} className="p-6">
+                <Card key={theater.id} className="p-6 bg-gray-900 border-gray-800">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{theater.name}</h3>
-                      <p className="text-sm text-gray-600">{theater.location}</p>
+                      <h3 className="text-lg font-semibold text-white">{theater.name}</h3>
+                      <p className="text-sm text-gray-400">{theater.location}</p>
                     </div>
                   </div>
                   
@@ -165,13 +165,13 @@ const MovieDetail = () => {
                       <button
                         key={showtime.id}
                         onClick={() => navigate(`/seat-selection/${movie.id}/${showtime.id}`)}
-                        className="px-6 py-3 border-2 border-gray-300 rounded-lg hover:border-red-600 hover:bg-red-50 transition-all group"
+                        className="px-6 py-3 border-2 border-gray-800 bg-gray-900 rounded-lg hover:border-red-600 hover:bg-red-600/10 transition-all group"
                       >
-                        <div className="text-sm font-semibold text-gray-900 group-hover:text-red-600">
+                        <div className="text-sm font-semibold text-white group-hover:text-red-500">
                           {showtime.time}
                         </div>
-                        <div className="text-xs text-gray-600 mt-1">{showtime.format}</div>
-                        <div className="text-xs text-green-600 mt-1">₹{showtime.price}</div>
+                        <div className="text-xs text-gray-400 mt-1">{showtime.format}</div>
+                        <div className="text-xs text-green-500 mt-1">₹{showtime.price}</div>
                       </button>
                     ))}
                   </div>
@@ -181,13 +181,13 @@ const MovieDetail = () => {
           </TabsContent>
           
           <TabsContent value="trailer">
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-4">Official Trailer</h3>
+            <Card className="p-6 bg-gray-900 border-gray-800">
+              <h3 className="text-xl font-semibold mb-4 text-white">Official Trailer</h3>
               <div className="aspect-video bg-black rounded-lg overflow-hidden">
                 <iframe
                   width="100%"
                   height="100%"
-                  src={movie.trailer}
+                  src={`https://www.youtube.com/embed/${movie.trailer}?autoplay=0`}
                   title="Movie Trailer"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
