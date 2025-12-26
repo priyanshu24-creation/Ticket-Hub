@@ -128,19 +128,52 @@ const Payment = () => {
 
             <Card className="p-6 bg-gray-900 border-gray-800">
               <h3 className="text-lg font-semibold mb-4 text-white">Payment Method</h3>
-              <div className="space-y-3">
-                <button className="w-full p-4 border-2 border-red-600 bg-red-600/10 rounded-lg text-left">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-semibold text-white">Razorpay Payment Gateway</div>
-                      <div className="text-sm text-gray-400">UPI, Cards, NetBanking, Wallets</div>
+              {!showPaymentQR ? (
+                <div className="space-y-3">
+                  <button className="w-full p-4 border-2 border-red-600 bg-red-600/10 rounded-lg text-left">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-semibold text-white">Razorpay Payment Gateway</div>
+                        <div className="text-sm text-gray-400">UPI, Cards, NetBanking, Wallets</div>
+                      </div>
+                      <div className="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center">
+                        <Check className="h-3 w-3 text-white" />
+                      </div>
                     </div>
-                    <div className="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center">
-                      <Check className="h-3 w-3 text-white" />
+                  </button>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  <div className="bg-white p-6 rounded-lg">
+                    <div className="flex justify-center mb-4">
+                      <QRCodeSVG 
+                        value={paymentQRData}
+                        size={200}
+                        level="H"
+                        includeMargin={true}
+                      />
                     </div>
+                    <p className="text-center text-gray-900 font-semibold mb-2">Scan to Pay ₹{grandTotal}</p>
+                    <p className="text-center text-sm text-gray-600">Scan this QR code with any UPI app</p>
                   </div>
-                </button>
-              </div>
+                  <div className="flex space-x-3">
+                    <Button 
+                      onClick={() => setShowPaymentQR(false)} 
+                      variant="outline"
+                      className="flex-1 border-gray-700 text-white hover:bg-gray-800"
+                    >
+                      Back
+                    </Button>
+                    <Button 
+                      onClick={handlePaymentComplete}
+                      disabled={processing}
+                      className="flex-1 bg-green-600 hover:bg-green-700"
+                    >
+                      {processing ? 'Processing...' : 'Payment Done'}
+                    </Button>
+                  </div>
+                </div>
+              )}
             </Card>
           </div>
 
