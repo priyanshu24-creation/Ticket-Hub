@@ -64,18 +64,18 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-red-600 mb-2">BookMyShow</h1>
-          <p className="text-gray-600">Your gateway to entertainment</p>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent mb-2">TicketHub</h1>
+          <p className="text-gray-400">Your gateway to entertainment</p>
         </div>
 
-        <Card className="p-6">
+        <Card className="p-6 bg-gray-900 border-gray-800">
           <Tabs defaultValue="login" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-6">
-              <TabsTrigger value="login">Login</TabsTrigger>
-              <TabsTrigger value="register">Register</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 mb-6 bg-gray-800 border-gray-700">
+              <TabsTrigger value="login" className="data-[state=active]:bg-red-600">Login</TabsTrigger>
+              <TabsTrigger value="register" className="data-[state=active]:bg-red-600">Register</TabsTrigger>
             </TabsList>
 
             <TabsContent value="login">
