@@ -12,7 +12,7 @@ export const mockMovies = [
     format: ["2D", "3D", "IMAX"],
     duration: "3h 15m",
     releaseDate: "2024-12-05",
-    trailer: "https://www.youtube.com/embed/BhQTkdZFOyo",
+    trailer: "BhQTkdZFOyo",
     description: "The clash is on as Pushpa and Bhanwar Singh continue their rivalry in this epic conclusion."
   },
   {
@@ -26,7 +26,7 @@ export const mockMovies = [
     format: ["2D"],
     duration: "2h 30m",
     releaseDate: "2024-08-15",
-    trailer: "https://www.youtube.com/embed/example",
+    trailer: "KVnheWSKu0w",
     description: "The women of Chanderi return with another mysterious entity."
   },
   {
@@ -40,7 +40,7 @@ export const mockMovies = [
     format: ["2D", "3D", "IMAX"],
     duration: "3h 0m",
     releaseDate: "2024-06-27",
-    trailer: "https://www.youtube.com/embed/example2",
+    trailer: "e3YzyAFric0",
     description: "A modern avatar of Vishnu descends to Earth to protect the world from evil forces."
   },
   {
@@ -54,7 +54,7 @@ export const mockMovies = [
     format: ["2D", "IMAX"],
     duration: "2h 50m",
     releaseDate: "2024-09-07",
-    trailer: "https://www.youtube.com/embed/example3",
+    trailer: "CEZbKlJJ0bU",
     description: "A man is driven by a personal vendetta to rectify the wrongs in society."
   }
 ];
